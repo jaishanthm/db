@@ -9,15 +9,15 @@ interface Props {
 export const SeverityBadge: React.FC<Props> = ({ severity, className = '' }) => {
   const norm = severity.toLowerCase();
 
-  let colorClasses = 'bg-slate-800 text-slate-300 border-slate-700';
+  let colorClasses = 'bg-slate-100 text-slate-700 border-slate-200';
   if (norm.includes('critical')) {
-    colorClasses = 'bg-rose-950/80 text-rose-300 border-rose-800/80';
+    colorClasses = 'bg-rose-50 text-rose-700 border-rose-200';
   } else if (norm.includes('high')) {
-    colorClasses = 'bg-amber-950/80 text-amber-300 border-amber-800/80';
+    colorClasses = 'bg-amber-50 text-amber-800 border-amber-200';
   } else if (norm.includes('medium')) {
-    colorClasses = 'bg-cyan-950/80 text-cyan-300 border-cyan-800/80';
+    colorClasses = 'bg-cyan-50 text-cyan-800 border-cyan-200';
   } else if (norm.includes('low')) {
-    colorClasses = 'bg-emerald-950/80 text-emerald-300 border-emerald-800/80';
+    colorClasses = 'bg-emerald-50 text-emerald-800 border-emerald-200';
   }
 
   return (
