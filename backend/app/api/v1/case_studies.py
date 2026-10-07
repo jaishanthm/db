@@ -13,7 +13,7 @@ def list_case_studies(
     industry: Optional[str] = Query(None),
     q: Optional[str] = Query(None),
     page: int = Query(1, ge=1),
-    per_page: int = Query(10, ge=1, le=50),
+    per_page: int = Query(10, ge=1, le=100),
     db: Session = Depends(get_db)
 ):
     query = db.query(CaseStudy)
