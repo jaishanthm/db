@@ -2,26 +2,28 @@
 
 @layer base {
   :root {
-    --bg-primary: #111726;
-    --bg-secondary: #161f33;
-    --bg-card: #1a243a;
-    --bg-muted: #212d47;
-    --border-color: rgba(148, 163, 184, 0.16);
-    --border-subtle: rgba(148, 163, 184, 0.1);
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-muted: #94a3b8;
-    --accent-cyan: #38bdf8;
-    --accent-blue: #60a5fa;
-    --accent-emerald: #34d399;
-    --accent-amber: #fbbf24;
-    --accent-rose: #fb7185;
-    --accent-purple: #c084fc;
+    --bg-primary: #ffffff;
+    --bg-secondary: #fefdfa;
+    --bg-card: #ffffff;
+    --bg-muted: #fefbf3;
+    --border-color: #fde68a;
+    --border-subtle: #fef3c7;
+    --text-primary: #1c1917;
+    --text-secondary: #44403c;
+    --text-muted: #78716c;
+    --accent-gold: #d97706;
+    --accent-gold-light: #fef3c7;
+    --accent-amber: #b45309;
+    --accent-yellow: #eab308;
+    --accent-emerald: #059669;
+    --accent-rose: #e11d48;
+    --accent-blue: #2563eb;
+    --accent-purple: #9333ea;
   }
 
   body {
-    background-color: #111726;
-    color: #f8fafc;
+    background-color: #fcfbfa;
+    color: #1c1917;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
     margin: 0;
@@ -30,31 +32,31 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom scrollbar with elegant slate styling */
+  /* Custom scrollbar with soft golden styling */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #111726;
+    background: #fcfbfa;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2a3752;
+    background: #fde68a;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #38bdf8;
+    background: #d97706;
   }
 }
 
-/* Elegant ambient mesh background with subtle multi-source lighting */
+/* Light Golden & White Ambient Background with subtle warm illumination */
 .elegant-bg {
-  background-color: #111726;
+  background-color: #fcfbfa;
   background-image: 
-    radial-gradient(circle at 50% -10%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    radial-gradient(circle at 50% -10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 90% 30%, rgba(234, 179, 8, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+    radial-gradient(rgba(217, 119, 6, 0.12) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
   background-attachment: fixed;
 }
@@ -62,265 +64,242 @@
 .cyber-grid-bg {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(217, 119, 6, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 119, 6, 0.08) 1px, transparent 1px);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+.glow-cyan, .glow-amber, .glow-gold {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
 }
 
 .glow-rose {
-  box-shadow: 0 0 20px rgba(251, 113, 133, 0.2);
-}
-
-.glow-amber {
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
-}
-
-.glow-purple {
-  box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
+  box-shadow: 0 0 20px rgba(225, 29, 72, 0.16);
 }
 
 /* ==========================================================================
-   MEDIUM THEME & ELEGANT BACKGROUND SYSTEM
-   Refined medium-dark palette (neither flat white nor pitch black)
-   with frosted glass surfaces, subtle luminescent borders, and rich typography
+   LIGHT GOLDEN & WHITE THEME SYSTEM
+   Transforms all dark surfaces to pristine white with radiant light-gold accents
    ========================================================================== */
 
-/* Medium surface backgrounds with frosted glass depth */
+/* Background surfaces - Pure White & Warm Ivory */
 .bg-slate-950 {
-  background-color: rgba(19, 27, 44, 0.88) !important;
-  backdrop-filter: blur(12px);
+  background-color: #ffffff !important;
 }
 .bg-slate-900 {
-  background-color: rgba(24, 34, 54, 0.82) !important;
-  backdrop-filter: blur(10px);
+  background-color: #ffffff !important;
 }
 .bg-slate-850 {
-  background-color: rgba(29, 41, 65, 0.8) !important;
+  background-color: #fefdfa !important;
 }
 .bg-slate-800 {
-  background-color: rgba(35, 49, 77, 0.75) !important;
+  background-color: #fefbf3 !important;
 }
 
-/* Semi-transparent layered surfaces */
+/* Semi-transparent pure white and golden surfaces */
 [class*="bg-slate-950/"] {
-  background-color: rgba(17, 23, 38, 0.92) !important;
-  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.98) !important;
 }
 [class*="bg-slate-900/"] {
-  background-color: rgba(24, 34, 54, 0.88) !important;
-  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.96) !important;
 }
 [class*="bg-slate-800/"] {
-  background-color: rgba(35, 49, 77, 0.75) !important;
+  background-color: rgba(254, 251, 243, 0.9) !important;
 }
 
-/* Hover surfaces with subtle illumination */
+/* Golden hover surfaces */
 .hover\:bg-slate-900:hover,
 [class*="hover:bg-slate-900"]:hover {
-  background-color: rgba(33, 46, 73, 0.9) !important;
+  background-color: #fefbf2 !important;
 }
 .hover\:bg-slate-850:hover,
 [class*="hover:bg-slate-850"]:hover {
-  background-color: rgba(38, 53, 83, 0.85) !important;
+  background-color: #fef9ee !important;
 }
 .hover\:bg-slate-800:hover,
 [class*="hover:bg-slate-800"]:hover {
-  background-color: rgba(43, 60, 93, 0.85) !important;
+  background-color: #fef3c7 !important;
 }
 
-/* Refined elegant borders */
+/* Delicate golden amber borders */
 .border-slate-800,
 .border-slate-700,
 [class*="border-slate-800"],
 [class*="border-slate-700"] {
-  border-color: rgba(148, 163, 184, 0.16) !important;
+  border-color: #fde68a !important;
 }
 .divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
-  border-color: rgba(148, 163, 184, 0.16) !important;
+  border-color: #fde68a !important;
 }
 
-/* Crisp, high-readability typography */
+/* Deep charcoal/stone typography for maximum contrast on white */
 .text-white {
-  color: #f8fafc !important;
+  color: #1c1917 !important;
 }
 .text-slate-100 {
-  color: #f1f5f9 !important;
+  color: #1c1917 !important;
 }
 .text-slate-200 {
-  color: #e2e8f0 !important;
+  color: #292524 !important;
 }
 .text-slate-300 {
-  color: #cbd5e1 !important;
+  color: #44403c !important;
 }
 .text-slate-400 {
-  color: #94a3b8 !important;
+  color: #78716c !important;
 }
 .text-slate-500 {
-  color: #64748b !important;
+  color: #78716c !important;
 }
 
-/* Headings hover with subtle cyan illumination */
+/* Headings hover with warm golden accent */
 .hover\:text-white:hover,
 [class*="hover:text-white"]:hover,
 [class*="group-hover:text-white"]:hover {
-  color: #ffffff !important;
+  color: #b45309 !important;
 }
 .hover\:text-slate-100:hover,
 .hover\:text-slate-200:hover {
-  color: #38bdf8 !important;
+  color: #b45309 !important;
 }
 
-/* Luminescent jewel-tone accents */
+/* Radiant golden accents */
 .text-cyan-300 {
-  color: #7dd3fc !important;
+  color: #d97706 !important;
 }
 .text-cyan-400 {
-  color: #38bdf8 !important;
+  color: #b45309 !important;
 }
 .text-cyan-500 {
-  color: #0ea5e9 !important;
+  color: #92400e !important;
 }
-.text-rose-300 {
-  color: #fda4af !important;
-}
+.text-rose-300,
 .text-rose-400 {
-  color: #fb7185 !important;
+  color: #be123c !important;
 }
-.text-amber-300 {
-  color: #fde68a !important;
-}
+.text-amber-300,
 .text-amber-400 {
-  color: #fbbf24 !important;
+  color: #b45309 !important;
 }
-.text-emerald-300 {
-  color: #6ee7b7 !important;
-}
+.text-emerald-300,
 .text-emerald-400 {
-  color: #34d399 !important;
+  color: #047857 !important;
 }
-.text-blue-300 {
-  color: #93c5fd !important;
-}
+.text-blue-300,
 .text-blue-400 {
-  color: #60a5fa !important;
+  color: #1d4ed8 !important;
 }
-.text-purple-300 {
-  color: #d8b4fe !important;
-}
+.text-purple-300,
 .text-purple-400 {
-  color: #c084fc !important;
+  color: #7e22ce !important;
 }
 
-/* Elegant frosted badge pills with ambient tint */
+/* Light golden pastel pills and tags */
 .bg-cyan-950,
 [class*="bg-cyan-950"] {
-  background-color: rgba(56, 189, 248, 0.12) !important;
-  border-color: rgba(56, 189, 248, 0.28) !important;
-  color: #38bdf8 !important;
+  background-color: #fefce8 !important;
+  border-color: #fef08a !important;
+  color: #854d0e !important;
 }
 .bg-rose-950,
 [class*="bg-rose-950"] {
-  background-color: rgba(251, 113, 133, 0.12) !important;
-  border-color: rgba(251, 113, 133, 0.28) !important;
-  color: #fb7185 !important;
+  background-color: #fff1f2 !important;
+  border-color: #fecdd3 !important;
+  color: #be123c !important;
 }
 .bg-amber-950,
 [class*="bg-amber-950"] {
-  background-color: rgba(251, 191, 36, 0.12) !important;
-  border-color: rgba(251, 191, 36, 0.28) !important;
-  color: #fbbf24 !important;
+  background-color: #fffbeb !important;
+  border-color: #fde68a !important;
+  color: #92400e !important;
 }
 .bg-emerald-950,
 [class*="bg-emerald-950"] {
-  background-color: rgba(52, 211, 153, 0.12) !important;
-  border-color: rgba(52, 211, 153, 0.28) !important;
-  color: #34d399 !important;
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
 }
 .bg-blue-950,
 [class*="bg-blue-950"] {
-  background-color: rgba(96, 165, 250, 0.12) !important;
-  border-color: rgba(96, 165, 250, 0.28) !important;
-  color: #60a5fa !important;
+  background-color: #eff6ff !important;
+  border-color: #bfdbfe !important;
+  color: #1d4ed8 !important;
 }
 .bg-purple-950,
 [class*="bg-purple-950"] {
-  background-color: rgba(192, 132, 252, 0.12) !important;
-  border-color: rgba(192, 132, 252, 0.28) !important;
-  color: #c084fc !important;
+  background-color: #faf5ff !important;
+  border-color: #e9d5ff !important;
+  color: #7e22ce !important;
 }
 
-/* Action buttons */
+/* Primary buttons in radiant gold */
 .bg-cyan-500 {
-  background: linear-gradient(135deg, #0284c7, #0ea5e9) !important;
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
   color: #ffffff !important;
-  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.25) !important;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3) !important;
 }
 .bg-cyan-500:hover,
 button.bg-cyan-500:hover {
-  background: linear-gradient(135deg, #0369a1, #0284c7) !important;
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4) !important;
+  background: linear-gradient(135deg, #d97706, #b45309) !important;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4) !important;
 }
 
 /* Active navigation items and highlight tags */
 [class*="bg-cyan-500/10"] {
-  background-color: rgba(56, 189, 248, 0.12) !important;
+  background-color: #fefce8 !important;
 }
 [class*="border-cyan-500/20"] {
-  border-color: rgba(56, 189, 248, 0.3) !important;
+  border-color: #fde68a !important;
 }
 [class*="border-cyan-800"] {
-  border-color: rgba(56, 189, 248, 0.35) !important;
+  border-color: #fde68a !important;
 }
 
-/* Input, select, textarea styling */
+/* Input, select, textarea styling on pure white */
 input, select, textarea {
-  background-color: rgba(17, 24, 39, 0.85) !important;
-  color: #f8fafc !important;
-  border-color: rgba(148, 163, 184, 0.2) !important;
+  background-color: #ffffff !important;
+  color: #1c1917 !important;
+  border-color: #fde68a !important;
 }
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(56, 189, 248, 0.5) !important;
-  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15) !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.2) !important;
 }
 input::placeholder, textarea::placeholder {
-  color: #64748b !important;
+  color: #a8a29e !important;
 }
 
 /* Code, pre, kbd styling */
 kbd {
-  background-color: rgba(30, 41, 59, 0.8) !important;
-  color: #94a3b8 !important;
-  border-color: rgba(148, 163, 184, 0.2) !important;
+  background-color: #fefbf3 !important;
+  color: #78716c !important;
+  border-color: #fde68a !important;
 }
 code, pre {
-  color: #e2e8f0;
+  color: #1c1917;
 }
 pre {
-  background-color: rgba(15, 23, 42, 0.85) !important;
-  border-color: rgba(148, 163, 184, 0.16) !important;
+  background-color: #fefdfa !important;
+  border-color: #fde68a !important;
 }
 
-/* Table styles */
+/* Table styles with light golden borders */
 table {
-  background-color: transparent;
+  background-color: #ffffff;
 }
 th {
-  background-color: rgba(22, 32, 51, 0.85) !important;
-  color: #94a3b8 !important;
-  border-color: rgba(148, 163, 184, 0.14) !important;
+  background-color: #fefbf3 !important;
+  color: #44403c !important;
+  border-color: #fde68a !important;
 }
 td {
-  border-color: rgba(148, 163, 184, 0.12) !important;
-  color: #e2e8f0;
+  border-color: #fef3c7 !important;
+  color: #292524;
 }
 
-/* Cards elevation and subtle inner bevel */
+/* Warm golden elevation shadow for cards on white */
 .shadow-xl, .shadow-2xl {
   box-shadow: 
-    0 10px 25px -5px rgba(0, 0, 0, 0.3),
-    0 8px 10px -6px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.05) !important;
+    0 10px 25px -5px rgba(180, 83, 9, 0.06),
+    0 8px 10px -6px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(253, 230, 138, 0.5) !important;
 }

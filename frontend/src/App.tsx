@@ -52,12 +52,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen elegant-bg text-slate-100 flex flex-col font-sans relative">
+    <div className="min-h-screen elegant-bg text-stone-900 flex flex-col font-sans relative">
       {/* Ambient Lighting Accents */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-gradient-to-b from-cyan-500/10 via-indigo-500/5 to-transparent blur-3xl" />
-        <div className="absolute top-[20%] right-[-100px] w-[500px] h-[500px] bg-purple-500/5 blur-[100px] rounded-full" />
-        <div className="absolute bottom-[10%] left-[-100px] w-[500px] h-[500px] bg-blue-500/5 blur-[100px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[350px] bg-gradient-to-b from-amber-400/15 via-yellow-300/10 to-transparent blur-3xl" />
+        <div className="absolute top-[20%] right-[-100px] w-[500px] h-[500px] bg-amber-400/8 blur-[100px] rounded-full" />
+        <div className="absolute bottom-[10%] left-[-100px] w-[500px] h-[500px] bg-yellow-400/8 blur-[100px] rounded-full" />
       </div>
 
       {/* Sidebar Navigation */}

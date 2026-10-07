@@ -57,24 +57,24 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-md flex items-start justify-center pt-16 px-4">
-      <div className="w-full max-w-2xl bg-[#151f33] border border-slate-700/70 rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-in fade-in zoom-in-95 duration-150">
+    <div className="fixed inset-0 z-50 bg-stone-900/40 backdrop-blur-sm flex items-start justify-center pt-16 px-4">
+      <div className="w-full max-w-2xl bg-white border border-amber-200 rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[80vh] animate-in fade-in zoom-in-95 duration-150">
         
         {/* Search Input Bar */}
-        <div className="flex items-center px-4 py-3 border-b border-slate-700/60 bg-[#172238]/90">
-          <Search className="w-5 h-5 text-cyan-400 mr-3" />
+        <div className="flex items-center px-4 py-3 border-b border-amber-200/70 bg-amber-50/30">
+          <Search className="w-5 h-5 text-amber-600 mr-3" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search malware, actors, campaigns, techniques, IOCs, case studies... (Esc to close)"
-            className="flex-1 bg-transparent text-slate-100 placeholder-slate-400 text-sm focus:outline-none"
+            className="flex-1 bg-transparent text-stone-900 placeholder-stone-400 text-sm focus:outline-none"
           />
           {loading && (
-            <div className="w-4 h-4 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin mr-2" />
+            <div className="w-4 h-4 border-2 border-amber-500 border-t-transparent rounded-full animate-spin mr-2" />
           )}
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-200">
+          <button onClick={onClose} className="text-stone-400 hover:text-stone-700">
             <X className="w-4 h-4" />
           </button>
         </div>
@@ -82,34 +82,34 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
         {/* Results Area */}
         <div className="overflow-y-auto p-3 space-y-4 max-h-[60vh]">
           {!query.trim() && (
-            <div className="py-8 text-center text-slate-400 text-xs">
+            <div className="py-8 text-center text-stone-500 text-xs">
               Type at least 2 characters to search across 105+ malware families, 50+ threat actors, 1,200+ indicators, and MITRE techniques.
             </div>
           )}
 
           {results && Object.values(results).every((arr: any) => arr.length === 0) && (
-            <div className="py-8 text-center text-slate-400 text-sm">
+            <div className="py-8 text-center text-stone-500 text-sm">
               No intelligence records found matching "{query}".
             </div>
           )}
 
           {results?.malware?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <ShieldAlert className="w-3.5 h-3.5 text-rose-400 mr-1.5" /> Malware Families
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-800 px-2 mb-1 flex items-center">
+                <ShieldAlert className="w-3.5 h-3.5 text-rose-600 mr-1.5" /> Malware Families
               </div>
               <div className="space-y-1">
                 {results.malware.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('malware', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
                     <div>
-                      <span className="font-semibold text-slate-200 group-hover:text-cyan-300">{item.title}</span>
-                      <span className="text-slate-400 ml-2">({item.subtitle})</span>
+                      <span className="font-semibold text-stone-800 group-hover:text-amber-800">{item.title}</span>
+                      <span className="text-stone-500 ml-2">({item.subtitle})</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -118,21 +118,21 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
 
           {results?.actors?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <Users className="w-3.5 h-3.5 text-amber-400 mr-1.5" /> Threat Actors
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-800 px-2 mb-1 flex items-center">
+                <Users className="w-3.5 h-3.5 text-amber-600 mr-1.5" /> Threat Actors
               </div>
               <div className="space-y-1">
                 {results.actors.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('actor', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
                     <div>
-                      <span className="font-semibold text-slate-200 group-hover:text-amber-300">{item.title}</span>
-                      <span className="text-slate-400 ml-2">· {item.subtitle}</span>
+                      <span className="font-semibold text-stone-800 group-hover:text-amber-800">{item.title}</span>
+                      <span className="text-stone-500 ml-2">· {item.subtitle}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -141,21 +141,21 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
 
           {results?.campaigns?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <Target className="w-3.5 h-3.5 text-purple-400 mr-1.5" /> Campaigns
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-purple-800 px-2 mb-1 flex items-center">
+                <Target className="w-3.5 h-3.5 text-purple-600 mr-1.5" /> Campaigns
               </div>
               <div className="space-y-1">
                 {results.campaigns.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('campaign', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
                     <div>
-                      <span className="font-semibold text-slate-200 group-hover:text-purple-300">{item.title}</span>
-                      <span className="text-slate-400 ml-2">· {item.subtitle}</span>
+                      <span className="font-semibold text-stone-800 group-hover:text-purple-800">{item.title}</span>
+                      <span className="text-stone-500 ml-2">· {item.subtitle}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -164,21 +164,21 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
 
           {results?.techniques?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <Crosshair className="w-3.5 h-3.5 text-cyan-400 mr-1.5" /> MITRE ATT&CK
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-amber-800 px-2 mb-1 flex items-center">
+                <Crosshair className="w-3.5 h-3.5 text-amber-600 mr-1.5" /> MITRE ATT&CK
               </div>
               <div className="space-y-1">
                 {results.techniques.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('technique', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
                     <div>
-                      <span className="font-mono text-cyan-300 font-semibold">{item.title}</span>
-                      <span className="text-slate-400 ml-2">· {item.subtitle}</span>
+                      <span className="font-mono text-amber-700 font-semibold">{item.title}</span>
+                      <span className="text-stone-500 ml-2">· {item.subtitle}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-amber-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -187,20 +187,20 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
 
           {results?.indicators?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <FileCode className="w-3.5 h-3.5 text-emerald-400 mr-1.5" /> Indicators of Compromise
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-emerald-800 px-2 mb-1 flex items-center">
+                <FileCode className="w-3.5 h-3.5 text-emerald-600 mr-1.5" /> Indicators of Compromise
               </div>
               <div className="space-y-1">
                 {results.indicators.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('indicator', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
-                    <div className="font-mono text-slate-300 text-[11px] truncate max-w-lg">
-                      {item.title} <span className="text-slate-500 ml-2 font-sans">({item.subtitle})</span>
+                    <div className="font-mono text-stone-800 text-[11px] truncate max-w-lg">
+                      {item.title} <span className="text-stone-500 ml-2 font-sans">({item.subtitle})</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -209,21 +209,21 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
 
           {results?.case_studies?.length > 0 && (
             <div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-2 mb-1 flex items-center">
-                <BookOpen className="w-3.5 h-3.5 text-blue-400 mr-1.5" /> Case Studies
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-blue-800 px-2 mb-1 flex items-center">
+                <BookOpen className="w-3.5 h-3.5 text-blue-600 mr-1.5" /> Case Studies
               </div>
               <div className="space-y-1">
                 {results.case_studies.map((item: any) => (
                   <button
                     key={item.id}
                     onClick={() => handleSelect('case_study', item)}
-                    className="w-full text-left px-3 py-2 rounded-lg bg-slate-800/40 hover:bg-slate-800/90 border border-slate-700/40 flex items-center justify-between text-xs transition-colors group"
+                    className="w-full text-left px-3 py-2 rounded-lg bg-amber-50/20 hover:bg-amber-50/70 border border-amber-100 flex items-center justify-between text-xs transition-colors group"
                   >
                     <div>
-                      <span className="font-semibold text-slate-200 group-hover:text-blue-300">{item.title}</span>
-                      <span className="text-slate-400 ml-2">· {item.subtitle}</span>
+                      <span className="font-semibold text-stone-800 group-hover:text-blue-800">{item.title}</span>
+                      <span className="text-stone-500 ml-2">· {item.subtitle}</span>
                     </div>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
               </div>
@@ -232,9 +232,9 @@ export const CommandPalette: React.FC<Props> = ({ isOpen, onClose, onNavigate })
         </div>
 
         {/* Footer shortcuts */}
-        <div className="px-4 py-2 border-t border-slate-700/50 bg-[#121929]/90 flex items-center justify-between text-[11px] text-slate-400">
+        <div className="px-4 py-2 border-t border-amber-200/60 bg-amber-50/40 flex items-center justify-between text-[11px] text-stone-500">
           <span>Navigate with mouse or Tab • Press Esc to close</span>
-          <span className="font-mono text-slate-400">Ctrl + K</span>
+          <span className="font-mono text-amber-700 font-semibold">Ctrl + K</span>
         </div>
       </div>
     </div>
