@@ -3,25 +3,27 @@
 @layer base {
   :root {
     --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
+    --bg-secondary: #fff5f7;
     --bg-card: #ffffff;
-    --bg-muted: #f1f5f9;
-    --border-color: #e2e8f0;
-    --border-subtle: #f1f5f9;
-    --text-primary: #0f172a;
-    --text-secondary: #334155;
-    --text-muted: #64748b;
-    --accent-cyan: #0891b2;
+    --bg-muted: #fff1f3;
+    --border-color: #ffe4e8;
+    --border-subtle: #fff1f5;
+    --text-primary: #18181b;
+    --text-secondary: #3f3f46;
+    --text-muted: #71717a;
+    --accent-blush: #f43f5e;
+    --accent-blush-light: #fff1f3;
+    --accent-rose: #e11d48;
+    --accent-cyan: #0284c7;
     --accent-blue: #2563eb;
     --accent-emerald: #059669;
     --accent-amber: #d97706;
-    --accent-rose: #e11d48;
     --accent-purple: #9333ea;
   }
 
   body {
-    background-color: #f8fafc;
-    color: #0f172a;
+    background-color: #ffffff;
+    color: #18181b;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
     margin: 0;
@@ -30,49 +32,53 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom scrollbar for cyber intel density */
+  /* Custom scrollbar with soft blush styling */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #f8fafc;
+    background: #ffffff;
   }
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #fecdd3;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: #fb7185;
   }
 }
 
-/* Crisp cyber grid background on light surface */
+/* Pure white canvas with delicate blush grid background */
 .cyber-grid-bg {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(226, 232, 240, 0.8) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(226, 232, 240, 0.8) 1px, transparent 1px);
+    linear-gradient(to right, rgba(254, 205, 211, 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(254, 205, 211, 0.45) 1px, transparent 1px);
 }
 
-.glow-cyan {
-  box-shadow: 0 0 15px rgba(8, 145, 178, 0.15);
+.glow-blush {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.16);
 }
 
 .glow-rose {
   box-shadow: 0 0 15px rgba(225, 29, 72, 0.15);
 }
 
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(244, 63, 94, 0.12);
+}
+
 .glow-amber {
-  box-shadow: 0 0 15px rgba(217, 119, 6, 0.15);
+  box-shadow: 0 0 15px rgba(217, 119, 6, 0.12);
 }
 
 /* ==========================================================================
-   GLOBAL LIGHT THEME SYSTEM
-   Transforms all dark surfaces to clean, modern, professional white / slate-50
+   PURE WHITE & SOFT BLUSH LIGHT THEME SYSTEM
+   Transforms all dark surfaces to pristine white with blush pastel accents
    ========================================================================== */
 
-/* Background surfaces */
+/* Background surfaces - Pure White & Subtle Blush */
 .bg-slate-950 {
   background-color: #ffffff !important;
 }
@@ -80,89 +86,92 @@
   background-color: #ffffff !important;
 }
 .bg-slate-850 {
-  background-color: #f8fafc !important;
+  background-color: #fff9fa !important;
 }
 .bg-slate-800 {
-  background-color: #f1f5f9 !important;
+  background-color: #fff1f3 !important;
 }
 
-/* Semi-transparent background overrides */
+/* Semi-transparent pure white and blush backgrounds */
 [class*="bg-slate-950/"] {
-  background-color: rgba(255, 255, 255, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
 }
 [class*="bg-slate-900/"] {
-  background-color: rgba(248, 250, 252, 0.95) !important;
+  background-color: rgba(255, 255, 255, 0.96) !important;
 }
 [class*="bg-slate-800/"] {
-  background-color: rgba(241, 245, 249, 0.85) !important;
+  background-color: rgba(255, 241, 243, 0.9) !important;
 }
 
-/* Hover backgrounds */
+/* Soft blush hover surfaces */
 .hover\:bg-slate-900:hover,
 [class*="hover:bg-slate-900"]:hover {
-  background-color: #f8fafc !important;
+  background-color: #fff5f7 !important;
 }
 .hover\:bg-slate-850:hover,
 [class*="hover:bg-slate-850"]:hover {
-  background-color: #f1f5f9 !important;
+  background-color: #fff1f3 !important;
 }
 .hover\:bg-slate-800:hover,
 [class*="hover:bg-slate-800"]:hover {
-  background-color: #f1f5f9 !important;
+  background-color: #ffe4e8 !important;
 }
 
-/* Borders */
+/* Soft blush delicate borders */
 .border-slate-800,
 .border-slate-700,
 [class*="border-slate-800"],
 [class*="border-slate-700"] {
-  border-color: #e2e8f0 !important;
+  border-color: #ffe4e8 !important;
 }
 .divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
-  border-color: #e2e8f0 !important;
+  border-color: #ffe4e8 !important;
 }
 
-/* High-contrast Typography */
+/* High-contrast crisp typography on pure white */
 .text-white {
-  color: #0f172a !important;
+  color: #18181b !important;
 }
 .text-slate-100 {
-  color: #0f172a !important;
+  color: #18181b !important;
 }
 .text-slate-200 {
-  color: #1e293b !important;
+  color: #27272a !important;
 }
 .text-slate-300 {
-  color: #334155 !important;
+  color: #3f3f46 !important;
 }
 .text-slate-400 {
-  color: #64748b !important;
+  color: #71717a !important;
 }
 .text-slate-500 {
-  color: #64748b !important;
+  color: #71717a !important;
 }
 
-/* Headings hover */
+/* Headings hover with warm blush accent */
 .hover\:text-white:hover,
 [class*="hover:text-white"]:hover,
 [class*="group-hover:text-white"]:hover {
-  color: #0f172a !important;
+  color: #e11d48 !important;
 }
 .hover\:text-slate-100:hover,
 .hover\:text-slate-200:hover {
-  color: #0f172a !important;
+  color: #e11d48 !important;
 }
 
-/* Vivid accent colors optimized for white surfaces */
+/* Primary cyber cyan converted to blush rose and sky */
 .text-cyan-300 {
-  color: #0891b2 !important;
+  color: #f43f5e !important;
 }
 .text-cyan-400 {
-  color: #0e7490 !important;
+  color: #e11d48 !important;
+}
+.text-cyan-500 {
+  color: #e11d48 !important;
 }
 .text-rose-300,
 .text-rose-400 {
-  color: #be123c !important;
+  color: #e11d48 !important;
 }
 .text-amber-300,
 .text-amber-400 {
@@ -174,19 +183,19 @@
 }
 .text-blue-300,
 .text-blue-400 {
-  color: #1d4ed8 !important;
+  color: #2563eb !important;
 }
 .text-purple-300,
 .text-purple-400 {
   color: #7e22ce !important;
 }
 
-/* Dark badge backgrounds transformed to clean pastel badges */
+/* Dark badges converted to soft blush pastel pills */
 .bg-cyan-950,
 [class*="bg-cyan-950"] {
-  background-color: #ecfeff !important;
-  border-color: #bae6fd !important;
-  color: #0369a1 !important;
+  background-color: #fff1f3 !important;
+  border-color: #fecdd3 !important;
+  color: #e11d48 !important;
 }
 .bg-rose-950,
 [class*="bg-rose-950"] {
@@ -219,44 +228,66 @@
   color: #7e22ce !important;
 }
 
-/* Input, select, textarea styling */
+/* Primary buttons in soft blush rose */
+.bg-cyan-500 {
+  background-color: #f43f5e !important;
+  color: #ffffff !important;
+}
+.bg-cyan-500:hover,
+button.bg-cyan-500:hover {
+  background-color: #e11d48 !important;
+}
+
+/* Active highlight containers */
+[class*="bg-cyan-500/10"] {
+  background-color: #fff1f3 !important;
+}
+[class*="border-cyan-500/20"] {
+  border-color: #fecdd3 !important;
+}
+[class*="border-cyan-800"] {
+  border-color: #fecdd3 !important;
+}
+
+/* Input, select, textarea styling on pure white */
 input, select, textarea {
-  background-color: #ffffff;
-  color: #0f172a;
+  background-color: #ffffff !important;
+  color: #18181b !important;
+  border-color: #ffe4e8 !important;
 }
 input::placeholder, textarea::placeholder {
-  color: #94a3b8;
+  color: #a1a1aa !important;
 }
 
 /* Code, pre, kbd styling */
 kbd {
-  background-color: #f1f5f9 !important;
-  color: #475569 !important;
-  border-color: #cbd5e1 !important;
+  background-color: #fff1f3 !important;
+  color: #71717a !important;
+  border-color: #fecdd3 !important;
 }
 code, pre {
-  color: #0f172a;
+  color: #18181b;
 }
 pre {
-  background-color: #f8fafc !important;
-  border-color: #e2e8f0 !important;
+  background-color: #fff9fa !important;
+  border-color: #ffe4e8 !important;
 }
 
-/* Table styles */
+/* Table styles with soft blush borders */
 table {
   background-color: #ffffff;
 }
 th {
-  background-color: #f8fafc !important;
-  color: #475569 !important;
-  border-color: #e2e8f0 !important;
+  background-color: #fff5f7 !important;
+  color: #3f3f46 !important;
+  border-color: #ffe4e8 !important;
 }
 td {
-  border-color: #e2e8f0 !important;
-  color: #1e293b;
+  border-color: #ffe4e8 !important;
+  color: #27272a;
 }
 
-/* Shadows for cards */
+/* Subtle soft shadow depth on pure white */
 .shadow-xl, .shadow-2xl {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 4px 12px -2px rgba(244, 63, 94, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04) !important;
 }

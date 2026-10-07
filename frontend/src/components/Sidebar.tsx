@@ -67,21 +67,21 @@ export const Sidebar: React.FC<Props> = ({ currentView, onNavigate, isOpen, onCl
       )}
 
       <aside
-        className={`fixed top-0 bottom-0 left-0 z-40 w-64 bg-white border-r border-slate-200 flex flex-col transition-transform duration-200 ease-in-out lg:translate-x-0 ${
+        className={`fixed top-0 bottom-0 left-0 z-40 w-64 bg-white border-r border-rose-100 flex flex-col transition-transform duration-200 ease-in-out lg:translate-x-0 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         {/* Brand Header */}
-        <div className="h-16 flex items-center px-5 border-b border-slate-200 bg-white">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-white text-base shadow-sm mr-3">
+        <div className="h-16 flex items-center px-5 border-b border-rose-100 bg-white">
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 via-pink-500 to-rose-600 flex items-center justify-center font-bold text-white text-base shadow-sm shadow-rose-200 mr-3">
             M
           </div>
           <div>
             <div className="font-bold text-sm tracking-wide text-slate-900 flex items-center gap-1.5">
               MALWARE DB
-              <span className="text-[10px] bg-cyan-50 text-cyan-700 font-mono px-1.5 py-0.2 rounded border border-cyan-200">PRO</span>
+              <span className="text-[10px] bg-rose-50 text-rose-700 font-mono px-1.5 py-0.2 rounded border border-rose-200">PRO</span>
             </div>
-            <div className="text-[10px] text-slate-500 font-mono tracking-wider">THREAT INTEL PLATFORM</div>
+            <div className="text-[10px] text-slate-400 font-mono tracking-wider">THREAT INTEL PLATFORM</div>
           </div>
         </div>
 
@@ -89,7 +89,7 @@ export const Sidebar: React.FC<Props> = ({ currentView, onNavigate, isOpen, onCl
         <div className="flex-1 overflow-y-auto px-3 py-4 space-y-6">
           {navSections.map((section, idx) => (
             <div key={idx}>
-              <div className="text-[10px] font-semibold font-mono tracking-wider text-slate-400 px-3 mb-2 uppercase">
+              <div className="text-[10px] font-semibold font-mono tracking-wider text-rose-400/90 px-3 mb-2 uppercase">
                 {section.title}
               </div>
               <nav className="space-y-1">
@@ -105,18 +105,18 @@ export const Sidebar: React.FC<Props> = ({ currentView, onNavigate, isOpen, onCl
                       }}
                       className={`w-full flex items-center px-3 py-2 text-xs font-medium rounded-lg transition-colors group ${
                         isActive
-                          ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 font-semibold'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 border border-transparent'
+                          ? 'bg-rose-50 text-rose-700 border border-rose-200 font-semibold'
+                          : 'text-slate-600 hover:text-rose-700 hover:bg-rose-50/50 border border-transparent'
                       }`}
                     >
                       <Icon
                         className={`w-4 h-4 mr-3 transition-colors ${
-                          isActive ? 'text-cyan-600' : 'text-slate-400 group-hover:text-slate-600'
+                          isActive ? 'text-rose-600' : 'text-slate-400 group-hover:text-rose-500'
                         }`}
                       />
                       <span>{item.label}</span>
                       {isActive && (
-                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-600" />
+                        <span className="ml-auto w-1.5 h-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.6)]" />
                       )}
                     </button>
                   );
@@ -127,7 +127,7 @@ export const Sidebar: React.FC<Props> = ({ currentView, onNavigate, isOpen, onCl
         </div>
 
         {/* Footer Status */}
-        <div className="p-3 border-t border-slate-200 bg-slate-50 text-[11px] font-mono text-slate-500">
+        <div className="p-3 border-t border-rose-100 bg-rose-50/30 text-[11px] font-mono text-slate-500">
           <div className="flex items-center justify-between mb-1">
             <span className="flex items-center text-emerald-600 font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-2" />
