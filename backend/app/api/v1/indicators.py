@@ -21,7 +21,9 @@ def list_indicators(
     query = db.query(Indicator)
 
     if q:
-        query = query.filter(Indicator.value.ilike(f"%{q.strip()}%"))
+        clean_q = q.strip()
+        escaped_q = f"%{clean_q.replace('\\', '\\\\')}%"
+        query = query.filter(or_(Indicator.value == clean_q, Indicator.value.ilike(escaped_q)))
 
     if type:
         query = query.filter(Indicator.indicator_type == type.strip())
@@ -68,7 +70,13 @@ def lookup_ioc(
     db: Session = Depends(get_db)
 ):
     clean_val = value.strip()
-    matches = db.query(Indicator).filter(Indicator.value.ilike(f"%{clean_val}%")).all()
+    escaped_val = f"%{clean_val.replace('\\', '\\\\')}%"
+    matches = db.query(Indicator).filter(
+        or_(
+            Indicator.value == clean_val,
+            Indicator.value.ilike(escaped_val)
+        )
+    ).all()
 
     results = []
     for ind in matches:

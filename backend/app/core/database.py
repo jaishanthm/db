@@ -4,7 +4,11 @@ from backend.app.core.config import DATABASE_URL, DATA_DIR
 
 # Primary Engine
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
-engine = create_engine(DATABASE_URL, connect_args=connect_args)
+engine_kwargs = {"connect_args": connect_args}
+if not DATABASE_URL.startswith("sqlite"):
+    engine_kwargs.update({"pool_pre_ping": True, "pool_recycle": 3600})
+
+engine = create_engine(DATABASE_URL, **engine_kwargs)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Sandboxed Read-Only Engine for SQL Explorer
@@ -13,8 +17,13 @@ if DATABASE_URL.startswith("sqlite"):
     ro_sqlite_url = f"sqlite:///file:{db_file.as_posix()}?mode=ro&uri=true"
     ro_engine = create_engine(ro_sqlite_url, connect_args={"check_same_thread": False, "uri": True})
 else:
-    # For PostgreSQL in production, read-only transactions can be enforced via connection options
-    ro_engine = create_engine(DATABASE_URL, execution_options={"isolation_level": "AUTOCOMMIT"})
+    # For MySQL/MariaDB, enforce autocommit read-only connection pooling
+    ro_engine = create_engine(
+        DATABASE_URL,
+        execution_options={"isolation_level": "AUTOCOMMIT"},
+        pool_pre_ping=True,
+        pool_recycle=3600
+    )
 
 Base = declarative_base()
 
