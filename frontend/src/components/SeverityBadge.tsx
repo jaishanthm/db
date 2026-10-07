@@ -9,20 +9,20 @@ interface Props {
 export const SeverityBadge: React.FC<Props> = ({ severity, className = '' }) => {
   const norm = severity.toLowerCase();
 
-  let colorClasses = 'bg-rose-50/40 text-slate-700 border-rose-100';
+  let colorClasses = 'bg-slate-800/80 text-slate-300 border-slate-700/60';
   if (norm.includes('critical')) {
-    colorClasses = 'bg-rose-50 text-rose-700 border-rose-200';
+    colorClasses = 'bg-rose-500/15 text-rose-300 border-rose-500/30';
   } else if (norm.includes('high')) {
-    colorClasses = 'bg-amber-50 text-amber-800 border-amber-200';
+    colorClasses = 'bg-amber-500/15 text-amber-300 border-amber-500/30';
   } else if (norm.includes('medium')) {
-    colorClasses = 'bg-pink-50 text-pink-700 border-pink-200';
+    colorClasses = 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30';
   } else if (norm.includes('low')) {
-    colorClasses = 'bg-emerald-50 text-emerald-800 border-emerald-200';
+    colorClasses = 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30';
   }
 
   return (
     <span
-      className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium tracking-wide uppercase border ${colorClasses} ${className}`}
+      className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium tracking-wide uppercase border backdrop-blur-sm ${colorClasses} ${className}`}
     >
       <span className="w-1.5 h-1.5 rounded-full mr-1.5 bg-current opacity-80" />
       {severity}

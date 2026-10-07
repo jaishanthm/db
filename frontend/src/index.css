@@ -2,28 +2,26 @@
 
 @layer base {
   :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #fff5f7;
-    --bg-card: #ffffff;
-    --bg-muted: #fff1f3;
-    --border-color: #ffe4e8;
-    --border-subtle: #fff1f5;
-    --text-primary: #18181b;
-    --text-secondary: #3f3f46;
-    --text-muted: #71717a;
-    --accent-blush: #f43f5e;
-    --accent-blush-light: #fff1f3;
-    --accent-rose: #e11d48;
-    --accent-cyan: #0284c7;
-    --accent-blue: #2563eb;
-    --accent-emerald: #059669;
-    --accent-amber: #d97706;
-    --accent-purple: #9333ea;
+    --bg-primary: #111726;
+    --bg-secondary: #161f33;
+    --bg-card: #1a243a;
+    --bg-muted: #212d47;
+    --border-color: rgba(148, 163, 184, 0.16);
+    --border-subtle: rgba(148, 163, 184, 0.1);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-cyan: #38bdf8;
+    --accent-blue: #60a5fa;
+    --accent-emerald: #34d399;
+    --accent-amber: #fbbf24;
+    --accent-rose: #fb7185;
+    --accent-purple: #c084fc;
   }
 
   body {
-    background-color: #ffffff;
-    color: #18181b;
+    background-color: #111726;
+    color: #f8fafc;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
     margin: 0;
@@ -32,262 +30,297 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Custom scrollbar with soft blush styling */
+  /* Custom scrollbar with elegant slate styling */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #111726;
   }
   ::-webkit-scrollbar-thumb {
-    background: #fecdd3;
+    background: #2a3752;
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #fb7185;
+    background: #38bdf8;
   }
 }
 
-/* Pure white canvas with delicate blush grid background */
+/* Elegant ambient mesh background with subtle multi-source lighting */
+.elegant-bg {
+  background-color: #111726;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
+    radial-gradient(circle at 90% 40%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 28px 28px;
+  background-attachment: fixed;
+}
+
 .cyber-grid-bg {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(254, 205, 211, 0.45) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(254, 205, 211, 0.45) 1px, transparent 1px);
-}
-
-.glow-blush {
-  box-shadow: 0 0 20px rgba(244, 63, 94, 0.16);
-}
-
-.glow-rose {
-  box-shadow: 0 0 15px rgba(225, 29, 72, 0.15);
+    linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 15px rgba(244, 63, 94, 0.12);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.glow-rose {
+  box-shadow: 0 0 20px rgba(251, 113, 133, 0.2);
 }
 
 .glow-amber {
-  box-shadow: 0 0 15px rgba(217, 119, 6, 0.12);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.2);
 }
 
 /* ==========================================================================
-   PURE WHITE & SOFT BLUSH LIGHT THEME SYSTEM
-   Transforms all dark surfaces to pristine white with blush pastel accents
+   MEDIUM THEME & ELEGANT BACKGROUND SYSTEM
+   Refined medium-dark palette (neither flat white nor pitch black)
+   with frosted glass surfaces, subtle luminescent borders, and rich typography
    ========================================================================== */
 
-/* Background surfaces - Pure White & Subtle Blush */
+/* Medium surface backgrounds with frosted glass depth */
 .bg-slate-950 {
-  background-color: #ffffff !important;
+  background-color: rgba(19, 27, 44, 0.88) !important;
+  backdrop-filter: blur(12px);
 }
 .bg-slate-900 {
-  background-color: #ffffff !important;
+  background-color: rgba(24, 34, 54, 0.82) !important;
+  backdrop-filter: blur(10px);
 }
 .bg-slate-850 {
-  background-color: #fff9fa !important;
+  background-color: rgba(29, 41, 65, 0.8) !important;
 }
 .bg-slate-800 {
-  background-color: #fff1f3 !important;
+  background-color: rgba(35, 49, 77, 0.75) !important;
 }
 
-/* Semi-transparent pure white and blush backgrounds */
+/* Semi-transparent layered surfaces */
 [class*="bg-slate-950/"] {
-  background-color: rgba(255, 255, 255, 0.98) !important;
+  background-color: rgba(17, 23, 38, 0.92) !important;
+  backdrop-filter: blur(16px);
 }
 [class*="bg-slate-900/"] {
-  background-color: rgba(255, 255, 255, 0.96) !important;
+  background-color: rgba(24, 34, 54, 0.88) !important;
+  backdrop-filter: blur(12px);
 }
 [class*="bg-slate-800/"] {
-  background-color: rgba(255, 241, 243, 0.9) !important;
+  background-color: rgba(35, 49, 77, 0.75) !important;
 }
 
-/* Soft blush hover surfaces */
+/* Hover surfaces with subtle illumination */
 .hover\:bg-slate-900:hover,
 [class*="hover:bg-slate-900"]:hover {
-  background-color: #fff5f7 !important;
+  background-color: rgba(33, 46, 73, 0.9) !important;
 }
 .hover\:bg-slate-850:hover,
 [class*="hover:bg-slate-850"]:hover {
-  background-color: #fff1f3 !important;
+  background-color: rgba(38, 53, 83, 0.85) !important;
 }
 .hover\:bg-slate-800:hover,
 [class*="hover:bg-slate-800"]:hover {
-  background-color: #ffe4e8 !important;
+  background-color: rgba(43, 60, 93, 0.85) !important;
 }
 
-/* Soft blush delicate borders */
+/* Refined elegant borders */
 .border-slate-800,
 .border-slate-700,
 [class*="border-slate-800"],
 [class*="border-slate-700"] {
-  border-color: #ffe4e8 !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
 }
 .divide-slate-800 > :not([hidden]) ~ :not([hidden]) {
-  border-color: #ffe4e8 !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
 }
 
-/* High-contrast crisp typography on pure white */
+/* Crisp, high-readability typography */
 .text-white {
-  color: #18181b !important;
+  color: #f8fafc !important;
 }
 .text-slate-100 {
-  color: #18181b !important;
+  color: #f1f5f9 !important;
 }
 .text-slate-200 {
-  color: #27272a !important;
+  color: #e2e8f0 !important;
 }
 .text-slate-300 {
-  color: #3f3f46 !important;
+  color: #cbd5e1 !important;
 }
 .text-slate-400 {
-  color: #71717a !important;
+  color: #94a3b8 !important;
 }
 .text-slate-500 {
-  color: #71717a !important;
+  color: #64748b !important;
 }
 
-/* Headings hover with warm blush accent */
+/* Headings hover with subtle cyan illumination */
 .hover\:text-white:hover,
 [class*="hover:text-white"]:hover,
 [class*="group-hover:text-white"]:hover {
-  color: #e11d48 !important;
+  color: #ffffff !important;
 }
 .hover\:text-slate-100:hover,
 .hover\:text-slate-200:hover {
-  color: #e11d48 !important;
+  color: #38bdf8 !important;
 }
 
-/* Primary cyber cyan converted to blush rose and sky */
+/* Luminescent jewel-tone accents */
 .text-cyan-300 {
-  color: #f43f5e !important;
+  color: #7dd3fc !important;
 }
 .text-cyan-400 {
-  color: #e11d48 !important;
+  color: #38bdf8 !important;
 }
 .text-cyan-500 {
-  color: #e11d48 !important;
+  color: #0ea5e9 !important;
 }
-.text-rose-300,
+.text-rose-300 {
+  color: #fda4af !important;
+}
 .text-rose-400 {
-  color: #e11d48 !important;
+  color: #fb7185 !important;
 }
-.text-amber-300,
+.text-amber-300 {
+  color: #fde68a !important;
+}
 .text-amber-400 {
-  color: #b45309 !important;
+  color: #fbbf24 !important;
 }
-.text-emerald-300,
+.text-emerald-300 {
+  color: #6ee7b7 !important;
+}
 .text-emerald-400 {
-  color: #047857 !important;
+  color: #34d399 !important;
 }
-.text-blue-300,
+.text-blue-300 {
+  color: #93c5fd !important;
+}
 .text-blue-400 {
-  color: #2563eb !important;
+  color: #60a5fa !important;
 }
-.text-purple-300,
+.text-purple-300 {
+  color: #d8b4fe !important;
+}
 .text-purple-400 {
-  color: #7e22ce !important;
+  color: #c084fc !important;
 }
 
-/* Dark badges converted to soft blush pastel pills */
+/* Elegant frosted badge pills with ambient tint */
 .bg-cyan-950,
 [class*="bg-cyan-950"] {
-  background-color: #fff1f3 !important;
-  border-color: #fecdd3 !important;
-  color: #e11d48 !important;
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.28) !important;
+  color: #38bdf8 !important;
 }
 .bg-rose-950,
 [class*="bg-rose-950"] {
-  background-color: #fff1f2 !important;
-  border-color: #fecdd3 !important;
-  color: #be123c !important;
+  background-color: rgba(251, 113, 133, 0.12) !important;
+  border-color: rgba(251, 113, 133, 0.28) !important;
+  color: #fb7185 !important;
 }
 .bg-amber-950,
 [class*="bg-amber-950"] {
-  background-color: #fffbeb !important;
-  border-color: #fde68a !important;
-  color: #b45309 !important;
+  background-color: rgba(251, 191, 36, 0.12) !important;
+  border-color: rgba(251, 191, 36, 0.28) !important;
+  color: #fbbf24 !important;
 }
 .bg-emerald-950,
 [class*="bg-emerald-950"] {
-  background-color: #ecfdf5 !important;
-  border-color: #a7f3d0 !important;
-  color: #047857 !important;
+  background-color: rgba(52, 211, 153, 0.12) !important;
+  border-color: rgba(52, 211, 153, 0.28) !important;
+  color: #34d399 !important;
 }
 .bg-blue-950,
 [class*="bg-blue-950"] {
-  background-color: #eff6ff !important;
-  border-color: #bfdbfe !important;
-  color: #1d4ed8 !important;
+  background-color: rgba(96, 165, 250, 0.12) !important;
+  border-color: rgba(96, 165, 250, 0.28) !important;
+  color: #60a5fa !important;
 }
 .bg-purple-950,
 [class*="bg-purple-950"] {
-  background-color: #faf5ff !important;
-  border-color: #e9d5ff !important;
-  color: #7e22ce !important;
+  background-color: rgba(192, 132, 252, 0.12) !important;
+  border-color: rgba(192, 132, 252, 0.28) !important;
+  color: #c084fc !important;
 }
 
-/* Primary buttons in soft blush rose */
+/* Action buttons */
 .bg-cyan-500 {
-  background-color: #f43f5e !important;
+  background: linear-gradient(135deg, #0284c7, #0ea5e9) !important;
   color: #ffffff !important;
+  box-shadow: 0 2px 10px rgba(14, 165, 233, 0.25) !important;
 }
 .bg-cyan-500:hover,
 button.bg-cyan-500:hover {
-  background-color: #e11d48 !important;
+  background: linear-gradient(135deg, #0369a1, #0284c7) !important;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4) !important;
 }
 
-/* Active highlight containers */
+/* Active navigation items and highlight tags */
 [class*="bg-cyan-500/10"] {
-  background-color: #fff1f3 !important;
+  background-color: rgba(56, 189, 248, 0.12) !important;
 }
 [class*="border-cyan-500/20"] {
-  border-color: #fecdd3 !important;
+  border-color: rgba(56, 189, 248, 0.3) !important;
 }
 [class*="border-cyan-800"] {
-  border-color: #fecdd3 !important;
+  border-color: rgba(56, 189, 248, 0.35) !important;
 }
 
-/* Input, select, textarea styling on pure white */
+/* Input, select, textarea styling */
 input, select, textarea {
-  background-color: #ffffff !important;
-  color: #18181b !important;
-  border-color: #ffe4e8 !important;
+  background-color: rgba(17, 24, 39, 0.85) !important;
+  color: #f8fafc !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.15) !important;
 }
 input::placeholder, textarea::placeholder {
-  color: #a1a1aa !important;
+  color: #64748b !important;
 }
 
 /* Code, pre, kbd styling */
 kbd {
-  background-color: #fff1f3 !important;
-  color: #71717a !important;
-  border-color: #fecdd3 !important;
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(148, 163, 184, 0.2) !important;
 }
 code, pre {
-  color: #18181b;
+  color: #e2e8f0;
 }
 pre {
-  background-color: #fff9fa !important;
-  border-color: #ffe4e8 !important;
+  background-color: rgba(15, 23, 42, 0.85) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
 }
 
-/* Table styles with soft blush borders */
+/* Table styles */
 table {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 th {
-  background-color: #fff5f7 !important;
-  color: #3f3f46 !important;
-  border-color: #ffe4e8 !important;
+  background-color: rgba(22, 32, 51, 0.85) !important;
+  color: #94a3b8 !important;
+  border-color: rgba(148, 163, 184, 0.14) !important;
 }
 td {
-  border-color: #ffe4e8 !important;
-  color: #27272a;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+  color: #e2e8f0;
 }
 
-/* Subtle soft shadow depth on pure white */
+/* Cards elevation and subtle inner bevel */
 .shadow-xl, .shadow-2xl {
-  box-shadow: 0 4px 12px -2px rgba(244, 63, 94, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 
+    0 10px 25px -5px rgba(0, 0, 0, 0.3),
+    0 8px 10px -6px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.05) !important;
 }
